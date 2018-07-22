@@ -38,30 +38,26 @@ function linkedListGenerator() {
     const get = (number) => {
         
         console.log("number", number)
-        if (number < 0 || !head) {
-            console.log("no number")
+        if (number < 0) {
+            console.log("negative number")
             return false 
         } else if (number === 0) {
+            console.log("zero", number)
             return head
         } else {
             let getThis = head
-            // console.log("getThis", getThis)
             for (let i = 0; i < number; i++) {
-                if (getThis.next !== null) {
-                    getThis = getThis.next
+                if (getThis.next ===  null) {
+                    return false
     
                 } else {
-                    return false
+                    getThis = getThis.next
                 }
-                // getThis = getThis.next
-                // console.log("through the loop")
             }
-            // getThis = getThis.next;
             console.log("index is", number)
             console.log("WTF", getThis)
             return getThis;
         }
-        // return getThis;
     }
 
     const remove = (number) => {
