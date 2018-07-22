@@ -92,7 +92,38 @@ function linkedListGenerator() {
     }
 
     const insert = (value, number) => {
+        console.log("Value:", value);
+        console.log("Number: ", number)
+
+        let previousNode = get(number - 1);
+        let thisNode = get(number)
+        let insertThis = {
+            value: value, 
+            next: null
+        }
+        console.log("previousNode", previousNode);
+        console.log("thisNode", thisNode)
+
+        if (!thisNode) { //if the current node is false
+            console.log("!thisNode", !thisNode)
+            return false; //return false
+        }
+        else if (!previousNode) { //if the previous node is false
+            console.log("!previousNode", previousNode)
+            insertThis.next = head; //the inserted node will be the new head
+            head = insertThis; //the current head will be the new node
+        }
+        else {
+            previousNode.next = insertThis; //the previous node is now the new node 
+            insertThis.next = thisNode; //the node next to the new node is now what used to be the current node 
+        }
+
+
         
+        // previousNode.next = insertThis;
+        // insertThis.next = previousNode;
+        
+
     }
 
     return {
