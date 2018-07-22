@@ -61,6 +61,25 @@ function linkedListGenerator() {
     }
 
     const remove = (number) => {
+        let previousNode = get(number - 1)
+        let nodeToRemove = get(number)
+
+        console.log("previousNode", previousNode)
+        console.log("!previousNode", !previousNode)
+// Not working in the same way
+        if (nodeToRemove === false) {
+            return false;
+        } 
+        else if (previousNode === false) {
+            head = nodeToRemove.next
+        }
+        else if (nodeToRemove === null) {
+            tail = previousNode
+            tail.next = null
+        }
+        else {
+            previousNode.next = nodeToRemove.next
+        }
 
     }
 
