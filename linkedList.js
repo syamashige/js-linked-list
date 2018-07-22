@@ -4,6 +4,7 @@
  * @return {Object} an object exposing methods to be used to manipulate a linked list
  */
 function linkedListGenerator() {
+    //the head and tail starts at null
     let head = null;
     let tail = null;
 
@@ -20,17 +21,17 @@ function linkedListGenerator() {
 
     const add = (value) => {
 
-        const newNode = {
+        const newNode = { //establish the new node
             value: value,
-            next: null
+            next: null 
         } 
 
-        if (head === null) {
-            head = newNode;
+        if (head === null) { //if there is no head, there's nothing in the list
+            head = newNode; //set the head and tail to equal the new node 
             tail = newNode;
-        } else {
-            tail.next = newNode;
-            tail = newNode;
+        } else {        //if there is something in the list
+            tail.next = newNode; //set the new node to be next to the tail/at the end of the list
+            tail = newNode; //set the tail to be the new node
         }
         return tail;
      }
@@ -38,7 +39,7 @@ function linkedListGenerator() {
     const get = (number) => {
         
         // console.log("number", number)
-        if (number < 0 || !head) {
+        if (number < 0 || !head) {      
             // console.log("no number")
             return false 
         } else if (number === 0) {
