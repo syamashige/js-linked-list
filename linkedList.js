@@ -37,9 +37,9 @@ function linkedListGenerator() {
 
     const get = (number) => {
         
-        console.log("number", number)
+        // console.log("number", number)
         if (number < 0 || !head) {
-            console.log("no number")
+            // console.log("no number")
             return false 
         } else if (number === 0) {
             return head
@@ -57,19 +57,42 @@ function linkedListGenerator() {
                 // console.log("through the loop")
             }
             // getThis = getThis.next;
-            console.log("index is", number)
-            console.log("WTF", getThis)
+            // console.log("index is", number)
+            // console.log("WTF", getThis)
+            console.log("Get This", getThis )
             return getThis;
         }
         // return getThis;
     }
 
     const remove = (number) => {
+        // console.log("index", number)
+        let previousThing = get(number - 1);
+        // console.log("previous", previousThing);
+        // console.log("!previous", !previousThing)
+        let thing = get(number);
+        // console.log("get number", get(number))
+        // console.log("thing", thing);
+        // console.log("!thing", !thing)
 
+        if (!thing) {
+            return false
+        } 
+        else if (!previousThing) {
+            head = thing.next
+        } 
+        else if (thing.next === null) {
+            tail = previousThing;
+            // console.log("tail", tail)
+            tail.next = null
+        }    
+        else {
+            previousThing.next = thing.next
+        }
     }
 
     const insert = (value, number) => {
-
+        
     }
 
     return {
