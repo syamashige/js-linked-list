@@ -64,7 +64,7 @@ function linkedListGenerator() {
     }
 
     remove = number => {
-
+        
     }
 
     insert = (value, number) => {
