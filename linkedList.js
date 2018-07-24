@@ -43,7 +43,21 @@ function linkedListGenerator() {
     }
 
     get = number => {
-        
+        if (head === null) {
+            return false;
+        } 
+        else {
+            let getThisNode = head;
+            for (let i = 0; i < number; i++) {
+                if (getThisNode.next !== null) {
+                    getThisNode = getThisNode.next;
+                }
+                else {
+                    return false;
+                }
+            }
+            return getThisNode;
+        }
     }
 
     remove = number => {
