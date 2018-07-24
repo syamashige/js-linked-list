@@ -43,7 +43,7 @@ function linkedListGenerator() {
     }
 
     get = number => {
-        if (head < 0) {
+        if (head < 0 || head === 0) {
             return false;
         } 
         // else if (head === null) {
@@ -65,20 +65,22 @@ function linkedListGenerator() {
 
     remove = number => {
         let previousNode = get(number - 1);
-        let removeThisNode = get(number);
+        let removeCurrentNode = get(number);
 
-        if (removeThisNode === null) {
-            return false;
+        // if (removeThisNode === null) { //this didn't work 
+        if (!removeCurrentNode) {              
+            return false;                   //this returns false
         }
-        else if (previousNode === null) {
-            head = removeThisNode;
+        // else if (previousNode === null) { //this didn't work
+        else if (!previousNode) {                       //if the previous node doesn't exist
+            head = removeCurrentNode;                   //the target node must be head
         }
-        else if (removeThisNode.next === null) { 
-            tail = previousNode;
-            tail.next = null;
+        else if (!removeCurrentNode.next) {    //if the target node is the tail  
+            tail = previousNode;                       //set the tail to be the previous node 
+            tail.next = null;                          //now the node next to the tail shouldn't exist
         }
         else {
-            return false;
+            previousNode.next = removeCurrentNode.next;
         }
     }
 
