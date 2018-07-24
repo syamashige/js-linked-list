@@ -9,12 +9,15 @@ function linkedListGenerator() {
     let tail = null;
 
     //Methods
+
+    //Returns the value of the first node of the list:
     getHead = () => {
-       
+        return head;
     }
 
+    //Returns the value of the last node of a list:
     getTail = () => {
-
+        return tail;
     }
 
     add = value => {
