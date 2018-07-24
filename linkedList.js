@@ -4,6 +4,7 @@
  * @return {Object} an object exposing methods to be used to manipulate a linked list
  */
 function linkedListGenerator() {
+    //Define the head and tail 
     
 
 
