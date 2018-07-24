@@ -5,10 +5,10 @@
  */
 function linkedListGenerator() {
 
-    let head = null;                //the head and tail starts as null
+    let head = null;                            //the head and tail starts as null
     let tail = null;
 
-    const getHead = () => {         //Another way of writing it: getHead = () => head
+    const getHead = () => {                     //Another way of writing it: getHead = () => head
         return head;
     }
 
@@ -16,19 +16,19 @@ function linkedListGenerator() {
         return tail;
     }
 
-    const add = (value) => {        //can technically be written as: add = value =>
+    const add = (value) => {                    //can technically be written as: add = value =>
 
-        const newNode = {           //establish the new node
+        const newNode = {                       //establish the new node
             value: value,
             next: null 
         } 
 
-        if (head === null) {        //if there is no head, there's nothing in the list
-            head = newNode;         //set the head and tail to equal the new node - this sets it as the one item in the list
+        if (head === null) {                    //if there is no head, there's nothing in the list
+            head = newNode;                     //set the head and tail to equal the new node - this sets it as the one item in the list
             tail = newNode;
-        } else {                    //if there is something in the list
-            tail.next = newNode;    //set the new node to be next to the tail/at the end of the list
-            tail = newNode;         //set the tail to be the new node
+        } else {                                //if there is something in the list
+            tail.next = newNode;                //set the new node to be next to the current tail/at the end of the list
+            tail = newNode;                     //set the new tail to be the new node
         }
         return tail;
      }
@@ -36,16 +36,16 @@ function linkedListGenerator() {
     const get = (number) => {
         
         // console.log("number", number)
-        if (number < 0 || !head) {    // if the number is negative, or if nothing exists
+        if (number < 0 || !head) {                 //if the number is negative, or if nothing exists
             // console.log("no number")
-            return false 
-        } else if (number === 0) {
-            return head
+            return false                           //return false
+        } else if (number === 0) {                 //if the number is 0 
+            return head                            //return the head
         } else {
-            let getThis = head
+            let getThis = head              
             // console.log("getThis", getThis)
-            for (let i = 0; i < number; i++) {
-                if (getThis.next !== null) {
+            for (let i = 0; i < number; i++) {     //loop through to stop at the particular number/position you are looking for 
+                if (getThis.next !== null) {       //
                     getThis = getThis.next
     
                 } else {
