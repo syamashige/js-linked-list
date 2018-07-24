@@ -5,6 +5,11 @@
  */
 function linkedListGenerator() {
     //Define the head and tail 
+    let head = null;
+    let tail = null;
+
+    //Methods
+    
     
 
 
