@@ -4,14 +4,11 @@
  * @return {Object} an object exposing methods to be used to manipulate a linked list
  */
 function linkedListGenerator() {
-    //the head and tail starts at null
-    let head = null;
+
+    let head = null;                //the head and tail starts as null
     let tail = null;
 
-    //Another way to write it: 
-    //getHead = () => head;
-    //let getHead = () => head;
-    const getHead = () => {
+    const getHead = () => {         //Another way of writing it: getHead = () => head
         return head;
     }
 
@@ -19,19 +16,19 @@ function linkedListGenerator() {
         return tail;
     }
 
-    const add = (value) => {
+    const add = (value) => {        //can technically be written as: add = value =>
 
-        const newNode = { //establish the new node
+        const newNode = {           //establish the new node
             value: value,
             next: null 
         } 
 
-        if (head === null) { //if there is no head, there's nothing in the list
-            head = newNode; //set the head and tail to equal the new node 
+        if (head === null) {        //if there is no head, there's nothing in the list
+            head = newNode;         //set the head and tail to equal the new node - this sets it as the one item in the list
             tail = newNode;
-        } else {        //if there is something in the list
-            tail.next = newNode; //set the new node to be next to the tail/at the end of the list
-            tail = newNode; //set the tail to be the new node
+        } else {                    //if there is something in the list
+            tail.next = newNode;    //set the new node to be next to the tail/at the end of the list
+            tail = newNode;         //set the tail to be the new node
         }
         return tail;
      }
@@ -39,7 +36,7 @@ function linkedListGenerator() {
     const get = (number) => {
         
         // console.log("number", number)
-        if (number < 0 || !head) {      
+        if (number < 0 || !head) {    // if the number is negative, or if nothing exists
             // console.log("no number")
             return false 
         } else if (number === 0) {
@@ -105,18 +102,18 @@ function linkedListGenerator() {
         console.log("previousNode", previousNode);
         console.log("thisNode", thisNode)
 
-        if (!thisNode) { //if the current node is false
+        if (!thisNode) {                            //if the current node is false
             console.log("!thisNode", !thisNode)
-            return false; //return false
+            return false;                           //return false
         }
-        else if (!previousNode) { //if the previous node is false
+        else if (!previousNode) {                   //if the previous node is false
             console.log("!previousNode", previousNode)
-            insertThis.next = head; //the inserted node will be the new head
-            head = insertThis; //the current head will be the new node
+            insertThis.next = head;                 //the inserted node will be the new head
+            head = insertThis;                      //the current head will be the new node
         }
         else {
-            previousNode.next = insertThis; //the previous node is now the new node 
-            insertThis.next = thisNode; //the node next to the new node is now what used to be the current node 
+            previousNode.next = insertThis;         //the previous node is now the new node 
+            insertThis.next = thisNode;             //the node next to the new node is now what used to be the current node 
         }
 
 
