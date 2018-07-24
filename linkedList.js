@@ -43,10 +43,10 @@ function linkedListGenerator() {
     }
 
     const get = number => {
-        if (head < 0 || head === 0) {
+        if (number < 0 || number === null) {
             return false;
         } 
-        // else if (head === null) {
+        // else if (number === null) {
         //     return false;
         // }
         else {
@@ -93,7 +93,7 @@ function linkedListGenerator() {
     }
 
     const insert = (value, number) => {                                
-        
+         
     }
     
 
