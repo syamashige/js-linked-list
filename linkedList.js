@@ -22,7 +22,24 @@ function linkedListGenerator() {
 
     //Takes in any data value and adds a new node to the end of a list and returns the new node
     add = value => {
+        //create a new node 
+        let addThisNode = {
+            value: value, 
+            next: null
+        }
 
+        //First check if the list is empty:
+        if (head === null) {
+            head = addThisNode;
+            tail = addThisNode;
+        } 
+        //Else - if it is not empty 
+        else {
+            tail.next = addThisNode;
+            tail = addThisNode
+        }
+        //Return the new tail - which should be the new node 
+        return tail;
     }
 
     get = number => {
