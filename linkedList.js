@@ -29,7 +29,7 @@ function linkedListGenerator() {
         }
 
         //First check if the list is empty:
-        if (head === null) {
+        if (head === null) {  //using (!head) works too 
             head = addThisNode;
             tail = addThisNode;
         } 
@@ -43,7 +43,7 @@ function linkedListGenerator() {
     }
 
     get = number => {
-
+        
     }
 
     remove = number => {
