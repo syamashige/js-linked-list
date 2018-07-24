@@ -11,17 +11,17 @@ function linkedListGenerator() {
     //Methods
 
     //Returns the value of the first node of the list:
-    getHead = () => {
+    const getHead = () => {
         return head;
     }
 
     //Returns the value of the last node of a list:
-    getTail = () => {
+    const getTail = () => {
         return tail;
     }
 
     //Takes in any data value and adds a new node to the end of a list and returns the new node
-    add = value => {
+    const add = value => {
         //create a new node 
         let addThisNode = {
             value: value, 
@@ -42,7 +42,7 @@ function linkedListGenerator() {
         return tail;
     }
 
-    get = number => {
+    const get = number => {
         if (head < 0 || head === 0) {
             return false;
         } 
@@ -63,28 +63,36 @@ function linkedListGenerator() {
         }
     }
 
-    remove = number => {
+    const remove = number => {
         let previousNode = get(number - 1);
         let removeCurrentNode = get(number);
 
+        // console.log("Number is: ", number)
+        // console.log("PreviousNode is: ", previousNode)
+        // console.log("CurrentNode: ", removeCurrentNode)
+
         // if (removeThisNode === null) { //this didn't work 
-        if (!removeCurrentNode) {              
-            return false;                   //this returns false
+        if (!removeCurrentNode) {                        //if the current node does not exist       
+            // console.log("!Current is: ", !removeCurrentNode)
+            return false;                                //this returns false
         }
         // else if (previousNode === null) { //this didn't work
-        else if (!previousNode) {                       //if the previous node doesn't exist
-            head = removeCurrentNode;                   //the target node must be head
+        else if (!previousNode) {                       //if the previous node doesn't exist - the target node would be the head 
+            // console.log("!Previous is: ", !previousNode)    
+            head = removeCurrentNode.next;              //the head then becomes the node next to what you want to remove 
+            // console.log("New Head is: ", head)
         }
-        else if (!removeCurrentNode.next) {    //if the target node is the tail  
+        else if (removeCurrentNode.next === null) {    //if the target node is the tail  
             tail = previousNode;                       //set the tail to be the previous node 
             tail.next = null;                          //now the node next to the tail shouldn't exist
+            // console.log("New Tail is: ", tail)
         }
-        else {
-            previousNode.next = removeCurrentNode.next;
+        else {                                          //else
+            previousNode.next = removeCurrentNode.next; //the current node gets replaced with it's next node 
         }
     }
 
-    insert = (value, number) => {
+    const insert = (value, number) => {                                
         
     }
     
