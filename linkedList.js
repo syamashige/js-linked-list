@@ -20,6 +20,7 @@ function linkedListGenerator() {
         return tail;
     }
 
+    //Takes in any data value and adds a new node to the end of a list and returns the new node
     add = value => {
 
     }
