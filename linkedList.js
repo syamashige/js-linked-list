@@ -93,7 +93,24 @@ function linkedListGenerator() {
     }
 
     const insert = (value, number) => {                                
-         
+        let previousNode = get(number - 1)
+        let currentNode = get(number)
+        let insertThisNode = {
+            value: value,
+            next: null
+        }
+
+        if (!currentNode) {
+            return false;
+        }
+        else if (!previousNode) {
+            insertThisNode.next = head;
+            head = insertThisNode;
+        }
+        else {
+            previousNode.next = insertThisNode;
+            insertThisNode.next = currentNode;
+        }
     }
     
 
