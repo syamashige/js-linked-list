@@ -9,7 +9,25 @@ function linkedListGenerator() {
     let tail = null;
 
     //Methods
-    
+    getHead = () => {
+       
+    }
+
+    add = value => {
+
+    }
+
+    get = number => {
+
+    }
+
+    remove = number => {
+
+    }
+
+    insert = (value, number) => {
+        
+    }
     
 
 
