@@ -64,7 +64,22 @@ function linkedListGenerator() {
     }
 
     remove = number => {
-        
+        let previousNode = get(number - 1);
+        let removeThisNode = get(number);
+
+        if (removeThisNode === null) {
+            return false;
+        }
+        else if (previousNode === null) {
+            head = removeThisNode;
+        }
+        else if (removeThisNode.next === null) { 
+            tail = previousNode;
+            tail.next = null;
+        }
+        else {
+            return false;
+        }
     }
 
     insert = (value, number) => {
