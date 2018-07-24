@@ -13,6 +13,10 @@ function linkedListGenerator() {
        
     }
 
+    getTail = () => {
+
+    }
+
     add = value => {
 
     }
@@ -30,9 +34,13 @@ function linkedListGenerator() {
     }
     
 
-
-
-
-
+    return {
+        getHead,
+        getTail, 
+        add,
+        get, 
+        remove,
+        insert
+    }
 
 }
